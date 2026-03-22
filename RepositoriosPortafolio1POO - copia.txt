@@ -1,0 +1,22 @@
+Julián Salas Durán 
+
+Prof. Álvaro Cordero Peña
+
+Programación Orientada Objetos
+
+Portafolio Versión 1 
+
+
+Link a los repositorios.
+
+Repositorio con la lógica del programa:
+
+https://github.com/JuliSalas/LogicaPortafolio1POO.git
+
+
+
+Repositorio UI del programa:
+
+https://github.com/JuliSalas/UiPortafolio1POO.git
+
+
