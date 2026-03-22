@@ -2,7 +2,7 @@ package cr.ac.ucenfotec.bl.entities;
 
 /**
  * Representa una cita médica.
- * Relaciona un paciente con un doctor en una fechaHora y hora.
+ * Relaciona un paciente con un doctor en una fechaHora
  */
 public class Cita {
 
