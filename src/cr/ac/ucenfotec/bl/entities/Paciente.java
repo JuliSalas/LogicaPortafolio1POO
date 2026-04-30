@@ -4,9 +4,8 @@ package cr.ac.ucenfotec.bl.entities;
  * Representa a un paciente dentro del sistema.
  * Contiene información básica como nombre, cédula y teléfono.
  */
-public class Paciente {
+public class Paciente extends Persona implements Identificable {
 
-    private String nombre;
     private String cedula;
     private String telefono;
 
@@ -20,33 +19,55 @@ public class Paciente {
      * Constructor con parámetros.
      */
     public Paciente(String nombre, String cedula, String telefono) {
-        this.nombre = nombre;
+        super(nombre);
         this.cedula = cedula;
         this.telefono = telefono;
     }
 
-    public String getNombre() {
-        return nombre;
+    @Override
+    public String obtenerIdentificador() {
+        return cedula;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    @Override
+    public String obtenerTipo() {
+        return "Paciente";
     }
 
     public String getCedula() {
+
         return cedula;
     }
 
     public void setCedula(String cedula) {
+
         this.cedula = cedula;
     }
 
     public String getTelefono() {
+
         return telefono;
     }
 
     public void setTelefono(String telefono) {
+
         this.telefono = telefono;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+
+        if (obj == null || this.getClass() != obj.getClass()) {
+            return false;
+        }
+
+        Paciente other = (Paciente) obj;
+
+        return this.getCedula() != null &&
+                this.getCedula().equals(other.getCedula());
     }
 
     @Override

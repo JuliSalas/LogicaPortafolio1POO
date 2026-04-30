@@ -4,9 +4,8 @@ package cr.ac.ucenfotec.bl.entities;
  * Representa a un doctor dentro del sistema.
  * Incluye su especialidad y código identificador.
  */
-public class Doctor {
+public class Doctor extends Persona implements Identificable {
 
-    private String nombre;
     private String codigo;
     private String especialidad;
 
@@ -17,39 +16,61 @@ public class Doctor {
      * Constructor con parámetros.
      */
     public Doctor(String nombre, String codigo, String especialidad) {
-        this.nombre = nombre;
+        super(nombre);
         this.codigo = codigo;
         this.especialidad = especialidad;
     }
 
-    public String getNombre() {
-        return nombre;
+    @Override
+    public String obtenerIdentificador() {
+        return codigo;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    @Override
+    public String obtenerTipo() {
+        return "Doctor";
     }
 
     public String getCodigo() {
+
         return codigo;
     }
 
     public void setCodigo(String codigo) {
+
         this.codigo = codigo;
     }
 
     public String getEspecialidad() {
+
         return especialidad;
     }
 
     public void setEspecialidad(String especialidad) {
+
         this.especialidad = especialidad;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+
+        if (obj == null || this.getClass() != obj.getClass()) {
+            return false;
+        }
+
+        Doctor other = (Doctor) obj;
+
+        return this.getCodigo() != null &&
+                this.getCodigo().equals(other.getCodigo());
     }
 
     @Override
     public String toString() {
         return "Doctor{" +
-                "nombre='" + nombre + '\'' +
+                "nombre='" + getNombre() + '\'' +
                 ", codigo='" + codigo + '\'' +
                 ", especialidad='" + especialidad + '\'' +
                 '}';
